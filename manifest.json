@@ -1,0 +1,36 @@
+{
+
+  "description": "block all website who distrub your productivity, we do not track or analytics, this app work offline. design by 4k_m4 and code by datoyacx",
+  "manifest_version": 2,
+  "name": "Let Me Focus",
+  "version": "1.0",
+  "homepage_url": "https://cryw0rks.ba-ka.org/",
+  "icons": {
+    "48": "icon/lmf.png"
+  },
+  "author": "datoyacx",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "*://*/*",
+    "<all_urls>"
+  ],
+  "browser_action": {
+    "browser_style": true,
+    "default_title": "Let Me Focus",
+    "default_popup": "popup/index.html"
+  },
+
+  "background": {
+    "scripts": [
+        "main.js"
+    ]
+  },
+  
+  "content_scripts": [{
+    "js": ["main.js"],
+    "run_at": "document_start",
+    "matches": ["*://*/*", "<all_urls>"]
+  }]
+}
